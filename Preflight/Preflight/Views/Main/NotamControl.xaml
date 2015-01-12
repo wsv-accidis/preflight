@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="Accidis.Apps.Preflight.Views.Main.NotamControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="745"
+             d:DesignWidth="480">
+
+	<Grid>
+		<ScrollViewer Margin="0,0,0,28">
+			<Grid Height="700">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+				<Button Click="OnSwedenVfrClicked" Grid.Row="0" Grid.ColumnSpan="2">Sweden VFR</Button>
+				<Button Click="OnSwedenIfrClicked" Grid.Row="1" Grid.ColumnSpan="2">Sweden IFR</Button>
+				<Button Click="OnSwedenFourDayClicked" Grid.Row="2" Grid.Column="0">Sweden 4-day</Button>
+				<Button Click="OnSwedenHeliClicked" Grid.Row="2" Grid.Column="1">Sweden Heli</Button>
+				<Button Click="OnNorwayClicked" Grid.Row="3" Grid.Column="0">Norway</Button>
+				<Button Click="OnFinlandClicked" Grid.Row="4" Grid.Column="0">Finland</Button>
+                <Button Click="OnDenmarkClicked" Grid.Row="3" Grid.Column="1">Denmark</Button>
+				<Button Click="OnGermanyClicked" Grid.Row="4" Grid.Column="1">Germany</Button>
+                <Button Click="OnEstoniaClicked" Grid.Row="5" Grid.Column="0">Estonia</Button>
+				<Button Click="OnPolandClicked" Grid.Row="6" Grid.Column="0">Poland</Button>
+				<Button Click="OnLatviaClicked" Grid.Row="5" Grid.Column="1">Latvia</Button>
+				<Button Click="OnLithuaniaClicked" Grid.Row="6" Grid.Column="1">Lithuania</Button>
+			</Grid>
+		</ScrollViewer>
+	</Grid>
+</UserControl>

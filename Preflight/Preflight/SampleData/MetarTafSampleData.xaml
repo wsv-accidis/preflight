@@ -1,0 +1,17 @@
+﻿<ViewModels:MetarTafViewModel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                              xmlns:local="clr-namespace:Accidis.Apps.Preflight"
+                              xmlns:ViewModels="clr-namespace:Accidis.Apps.Preflight.ViewModels">
+
+	<ViewModels:MetarTafViewModel.Items>
+        <ViewModels:MetarTafAirportViewModel IataCode="ESSA"
+		                                     Metar="041850Z 25013KT CAVOK 03/00 Q0974 RWY 01L DAMP 26-50 PCT FC / BA NOT REPORTED RWY 01R DAMP 51-100 PCT FC / BA NOT REPORTED RWY 08 DAMP 26-50 PCT FC / BA NOT REPORTED NOSIG="
+                                             Taf="041730Z 0418/0518 23012KT 9999 SCT025="
+                                             Visibility="Visible" />
+        <ViewModels:MetarTafAirportViewModel IataCode="ESSB"
+                                             Metar="041850Z 24011KT 9999 FEW024 04/00 Q0975="
+                                             Taf="041730Z 0418/0421 22010KT 9999 BKN030="
+                                             Visibility="Collapsed" />
+    </ViewModels:MetarTafViewModel.Items>
+
+</ViewModels:MetarTafViewModel>

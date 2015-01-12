@@ -1,0 +1,165 @@
+﻿<phone:PhoneApplicationPage x:Class="Accidis.Apps.Preflight.Views.FuelCalculatorPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+                            xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            mc:Ignorable="d"
+                            d:DesignWidth="480"
+                            d:DesignHeight="800"
+                            Style="{StaticResource TransitionPageStyle}"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Margin="12,17,0,28"
+                   Style="{StaticResource PhoneTextNormalStyle}"
+                   Text="FUEL CALCULATOR" />
+        
+        <Grid Margin="12,0,12,0"
+              Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock FontSize="24"
+                       Style="{StaticResource PhoneTextNormalStyle}"
+                       Text="Target total fuel (US.G)"
+                       VerticalAlignment="Center"/>
+            <TextBox Name="TargetTotalFuelField"
+                     Grid.Column="1"
+                     HorizontalAlignment="Right"
+                     InputScope="Digits"
+                     MaxLength="5"
+                     Text=""
+                     Width="140" />
+        </Grid>
+
+        <Grid Margin="12,20,12,0"
+              Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="1"
+                       Grid.Row="0"
+                       HorizontalAlignment="Center"
+                       Style="{StaticResource PhoneTextAccentStyle}"
+                       Text="LEFT"/>
+            <TextBlock Grid.Column="2"
+                       Grid.Row="0"
+                       HorizontalAlignment="Center"
+                       Style="{StaticResource PhoneTextAccentStyle}"
+                       Text="RIGHT"/>
+
+            <TextBlock FontSize="24"
+                       Grid.Row="1"
+                       Style="{StaticResource PhoneTextNormalStyle}"
+                       Text="Current (US.G)"
+                       VerticalAlignment="Center"/>
+            <TextBox Name="CurrentFuelLeftField"
+                     Grid.Column="1"
+                     Grid.Row="1"
+                     InputScope="Digits"
+                     MaxLength="5"
+                     Text=""
+                     Width="140" />
+            <TextBox Name="CurrentFuelRightField"
+                     Grid.Column="2"
+                     Grid.Row="1"
+                     InputScope="Digits"
+                     MaxLength="5"
+                     Text=""
+                     Width="140" />
+
+            <TextBlock FontSize="24"
+                       Grid.Row="2"
+                       Style="{StaticResource PhoneTextNormalStyle}"
+                       Text="Target (US.G)"
+                       VerticalAlignment="Center"/>
+            <TextBox Name="TargetFuelLeftField"
+                     Grid.Column="1"
+                     Grid.Row="2"
+                     InputScope="Digits"
+                     MaxLength="5"
+                     Text=""
+                     Width="140" />
+            <TextBox Name="TargetFuelRightField"
+                     Grid.Column="2"
+                     Grid.Row="2"
+                     InputScope="Digits"
+                     MaxLength="5"
+                     Text=""
+                     Width="140" />
+
+            <TextBlock Foreground="{StaticResource PhoneAccentBrush}"
+                       Grid.Row="3"
+                       Margin="12,20,0,0"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text="Fill (liters)"
+                       VerticalAlignment="Center"/>
+            <TextBlock Name="FillFuelLeftLabel"
+                       Grid.Column="1"
+                       Grid.Row="3"
+                       HorizontalAlignment="Center"
+                       Margin="0,25,0,5"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text=" "
+                       VerticalAlignment="Center"/>
+            <TextBlock Name="FillFuelRightLabel"
+                       Grid.Column="2"
+                       Grid.Row="3"
+                       HorizontalAlignment="Center"
+                       Margin="0,25,0,5"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text=" "
+                       VerticalAlignment="Center"/>
+        </Grid>
+
+        <StackPanel Grid.Row="3"
+                    Margin="12,20,0,0">
+            <TextBlock Margin="0"
+                       Style="{StaticResource PhoneTextNormalStyle}"                       
+                       TextWrapping="Wrap">
+                This utility solves the (common?) task of calculating the quantity of fuel to fill an airplane with, when the
+                onboard quantity is given in US gallons and the quantity of fuel dispensed is given in liters.
+            </TextBlock>
+            <TextBlock Margin="0,10,0,0"
+                       Style="{StaticResource PhoneTextNormalStyle}"                       
+                       TextWrapping="Wrap">
+                Enter the target total fuel or enter for each wing tank separately if desired. Then enter the current fuel level as
+                measured. The utility will calculate and show the difference in litres.
+            </TextBlock>
+            <TextBlock Margin="0,10,0,0"
+                       Style="{StaticResource PhoneTextNormalStyle}"                       
+                       TextWrapping="Wrap">
+                Always verify visually that the fuel onboard is sufficient for your planned flight, including reserves, before takeoff.
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</phone:PhoneApplicationPage>

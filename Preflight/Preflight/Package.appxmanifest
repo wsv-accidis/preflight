@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="18872Accidis.Preflight" Publisher="CN=DC6ED047-794C-40BD-8BFA-2955470F0923" Version="1.4.0.0" />
+  <mp:PhoneIdentity PhoneProductId="779ff2d4-833e-4548-a252-6a89414c830b" PhonePublisherId="fa44da0c-d76f-4ab4-8a91-56e968081134" />
+  <Properties>
+    <DisplayName>Preflight</DisplayName>
+    <PublisherDisplayName>Accidis</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="x779ff2d4y833ey4548ya252y6a89414c830bx" Executable="AGHost.exe" EntryPoint="Views/MainPage.xaml">
+      <m3:VisualElements DisplayName="Preflight" Square150x150Logo="Assets\SquareTile150x150.png" Square44x44Logo="Assets\Logo.png" Description="Aviation weather forecasts (TAF, METAR, LLF) and charts (SWC, SIGWX, VFR) from LFV Sweden (Luftfartsverket)." ForegroundText="light" BackgroundColor="#464646" ToastCapable="false">
+        <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png">
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="SplashScreenImage.jpg" />
+      </m3:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AgHostSvcs.dll</Path>
+        <ActivatableClass ActivatableClassId="AgHost.BackgroundTask" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>

@@ -1,0 +1,14 @@
+﻿<ViewModels:SigMetViewModel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                              xmlns:local="clr-namespace:Accidis.Apps.Preflight"
+                              xmlns:ViewModels="clr-namespace:Accidis.Apps.Preflight.ViewModels">
+
+    <ViewModels:SigMetViewModel.Items>
+        <ViewModels:SigMetAirportViewModel IataCode="EETT"
+		                                   SigMet="SIGMET 3 VALID 261010/261400 EEMH- EETT TALLINN FIR SEV TURB FCST E OF E022 SFC/FL050 MOV E 20KT NC="
+                                           Visibility="Visible" />
+        <ViewModels:SigMetAirportViewModel IataCode="ESAA"
+                                           SigMet="SIGMET8 VALID 260900/261200 ESSA- SWEDEN FIR SEV TURB FCST W OF LINE N6830 E02200 - N6440 E01630 - N6450 E01400 BTN SFC AND 6000 FT MOV NE 20KT WKN S PART="
+                                           Visibility="Collapsed" />
+    </ViewModels:SigMetViewModel.Items>
+</ViewModels:SigMetViewModel>

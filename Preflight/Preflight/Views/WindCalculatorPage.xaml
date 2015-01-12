@@ -1,0 +1,142 @@
+﻿<phone:PhoneApplicationPage x:Class="Accidis.Apps.Preflight.Views.WindCalculatorPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            mc:Ignorable="d"
+                            d:DesignWidth="480"
+                            d:DesignHeight="800"
+                            Style="{StaticResource TransitionPageStyle}"
+                            SupportedOrientations="Portrait"
+                            Orientation="Portrait">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Margin="12,17,0,28"
+                   Style="{StaticResource PhoneTextNormalStyle}"
+                   Text="WIND CALCULATOR" />
+
+        <Grid Margin="12,0,12,0"
+              Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text="Runway number"
+                       VerticalAlignment="Center"/>
+            <TextBox Name="RunwayNumberField"
+                     Grid.Column="1"
+                     Grid.Row="0"
+                     InputScope="Digits"
+                     MaxLength="2"
+                     Text=""
+                     Width="140" />
+            
+            <TextBlock Grid.Row="1"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text="Wind direction"
+                       VerticalAlignment="Center"/>
+            <TextBox Name="WindDirectionField"
+                     Grid.Column="1"
+                     Grid.Row="1"
+                     InputScope="Digits"
+                     MaxLength="3"
+                     Text=""
+                     Width="140" />
+
+            <TextBlock Grid.Row="2"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text="Wind speed (kts)"
+                       VerticalAlignment="Center"/>
+            <TextBox Name="WindSpeedField"
+                     Grid.Column="1"
+                     Grid.Row="2"
+                     InputScope="Digits"
+                     MaxLength="3"
+                     Text=""
+                     Width="140" />
+
+            <TextBlock Foreground="{StaticResource PhoneAccentBrush}"
+                       Grid.Row="3"
+                       Margin="12,10,0,0"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text="Wind angle"
+                       VerticalAlignment="Center"/>
+            <TextBlock Name="WindAngleLabel"
+                       Grid.Column="1"
+                       Grid.Row="3"
+                       HorizontalAlignment="Center"
+                       Margin="0,15,0,5"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text=" "
+                       VerticalAlignment="Center"/>
+            
+            <TextBlock Foreground="{StaticResource PhoneAccentBrush}"
+                       Grid.Row="4"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text="Crosswind (kts)"
+                       VerticalAlignment="Center"/>
+            <TextBlock Name="CrosswindLabel"
+                       Grid.Column="1"
+                       Grid.Row="4"
+                       HorizontalAlignment="Center"
+                       Margin="0,5,0,5"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text=" "
+                       VerticalAlignment="Center"/>
+            
+            <TextBlock Foreground="{StaticResource PhoneAccentBrush}"
+                       Grid.Row="5"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text="Headwind (kts)"
+                       VerticalAlignment="Center"/>
+            <TextBlock Name="HeadwindLabel"
+                       Grid.Column="1"
+                       Grid.Row="5"
+                       HorizontalAlignment="Center"
+                       Margin="0,5,0,5"
+                       Style="{StaticResource PhoneTextLargeStyle}"
+                       Text=" "
+                       VerticalAlignment="Center"/>
+        </Grid>
+
+        <StackPanel Grid.Row="2"
+                    Margin="12,20,0,0">
+            <TextBlock Margin="0"
+                       Style="{StaticResource PhoneTextNormalStyle}"                       
+                       TextWrapping="Wrap">
+                    Enter runway number, wind direction and wind speed. For example, if you are using rwy 30 and the 
+                    met report says 27010KT, enter "30", "270" and "10".                       
+            </TextBlock>
+            <TextBlock Margin="0,10,0,0" 
+                       Style="{StaticResource PhoneTextNormalStyle}"                       
+                       TextWrapping="Wrap">
+                    The sign of the wind angle indicates the direction relative to the runway, +/right or -/left.
+                    For example, +30 would mean that the wind is blowing from 30 degrees to the right.
+            </TextBlock>
+            <TextBlock Margin="0,10,0,0" 
+                       Style="{StaticResource PhoneTextNormalStyle}"                       
+                       TextWrapping="Wrap">
+                    If the headwind reads a negative value, there is tailwind. Please be careful.
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</phone:PhoneApplicationPage>

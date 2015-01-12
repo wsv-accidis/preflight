@@ -1,0 +1,70 @@
+﻿<phone:PhoneApplicationPage x:Class="Accidis.Apps.Preflight.Views.TextPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+							xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Style="{StaticResource TransitionPageStyle}"
+                            SupportedOrientations="PortraitOrLandscape"
+                            Orientation="Portrait"
+                            mc:Ignorable="d"
+                            d:DesignHeight="800"
+                            d:DesignWidth="480"
+                            shell:SystemTray.IsVisible="False">
+
+	<Grid x:Name="RootGrid">
+		<StackPanel x:Name="WaitPanel" VerticalAlignment="Center" Visibility="Visible">
+			<TextBlock HorizontalAlignment="Center">Downloading ...</TextBlock>
+			<ProgressBar x:Name="ProgressBar" Margin="0,20,0,0" />
+		</StackPanel>
+
+		<StackPanel x:Name="ErrorPanel" VerticalAlignment="Center" Margin="10" Visibility="Collapsed">
+			<TextBlock TextAlignment="Center" TextWrapping="Wrap">
+				Ouch, we seem to have hit a snag. The page failed to download due to the following error:
+			</TextBlock>
+			<TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Foreground="Red" Margin="0,10,0,0" x:Name="ErrorText">
+				Unknown error</TextBlock>
+			<TextBlock TextAlignment="Center" Margin="0,20,0,0">
+				So sorry. Please tap 'Back' now.
+			</TextBlock>
+		</StackPanel>
+
+		<Grid x:Name="ContentGrid" Margin="5" Visibility="Collapsed">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+
+			<TextBlock x:Name="PageIndicatorBlock" FontSize="{StaticResource PhoneFontSizeSmall}" Grid.Column="0"
+					   Visibility="Collapsed">
+				<Run Foreground="{StaticResource PhoneSubtleBrush}">Page</Run>
+				<Run x:Name="PageIndicator" Foreground="{StaticResource PhoneAccentBrush}">0/0</Run>
+			</TextBlock>
+
+			<TextBlock x:Name="PageInstructionBlock"
+					   Grid.Column="1" 
+					   FontSize="{StaticResource PhoneFontSizeSmall}"	
+					   Foreground="{StaticResource PhoneSubtleBrush}"
+					   TextAlignment="Right"
+					   Text="Swipe left/right to page, up/down to scroll." 
+					   TextWrapping="Wrap"
+					   Visibility="Collapsed"/>
+
+			<ScrollViewer x:Name="ContentScroller" Padding="0,5,0,0" Grid.Row="1" Grid.ColumnSpan="2">
+				<toolkit:GestureService.GestureListener>
+					<toolkit:GestureListener Flick="OnFlickCompleted" />
+				</toolkit:GestureService.GestureListener>
+				<StackPanel x:Name="ContentPanel" />
+			</ScrollViewer>
+		</Grid>
+	</Grid>
+</phone:PhoneApplicationPage>

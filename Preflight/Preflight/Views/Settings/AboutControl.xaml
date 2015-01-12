@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Accidis.Apps.Preflight.Views.Settings.AboutControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             d:DesignHeight="600" 
+             d:DesignWidth="480">
+
+	<Grid>
+		<StackPanel>
+            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" FontSize="{StaticResource PhoneFontSizeMediumLarge}">
+				Author
+			</TextBlock>
+            <RichTextBox IsReadOnly="true">
+                <Paragraph>
+                    Designed and developed by
+                    <Hyperlink NavigateUri="http://accidis.se" TargetName="_blank">Wilhelm Svenselius</Hyperlink>.
+                    <LineBreak />
+                </Paragraph>
+                <Paragraph>
+                    Weather feeds and charts from
+                    <Hyperlink NavigateUri="http://www.lfv.se/" TargetName="_blank">LFV FPC</Hyperlink>.
+                    <LineBreak />
+                </Paragraph>
+                <Paragraph>
+                    Please don't hesitate to send me feedback on this app. 
+                    I am a developer and PPL(A) holder who wrote this app in the hope
+                    that other aviators will find it useful.
+                </Paragraph>
+            </RichTextBox>
+            <TextBlock Foreground="{StaticResource PhoneAccentBrush}" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Margin="0,20,0,0">
+				Acknowledgements
+            </TextBlock>
+            <RichTextBox IsReadOnly="true">
+                <Paragraph>
+                    Concept inspired by the excellent
+                    <Hyperlink NavigateUri="https://market.android.com/details?id=se.doit.flightmet" TargetName="_blank">FlightMet Sweden</Hyperlink>
+                    app by DoIT Systemutveckling.
+                    <LineBreak />
+                </Paragraph>
+                <Paragraph>
+                    Round image button based on example code by
+                    <Hyperlink NavigateUri="http://blog.jayway.com/2011/02/03/create-a-round-button-control-for-windows-phone-7/" TargetName="_blank">Håkan Reis</Hyperlink>.
+                    <LineBreak />
+                </Paragraph>
+                <Paragraph>
+                    Background image based on DeviantArt photo by
+                    <Hyperlink NavigateUri="http://digimaree.deviantart.com/" TargetName="_blank">Mariee Jamieson</Hyperlink>.
+                    <LineBreak />
+                </Paragraph>
+                <Paragraph>
+                    Uses
+                    <Hyperlink NavigateUri="http://code.google.com/p/protobuf-net/" TargetName="_blank">protobuf-net</Hyperlink>
+                    and
+                    <Hyperlink NavigateUri="http://imagetools.codeplex.com/" TargetName="_blank">ImageTools</Hyperlink>.
+                </Paragraph>
+            </RichTextBox>
+        </StackPanel>
+	</Grid>
+</UserControl>
