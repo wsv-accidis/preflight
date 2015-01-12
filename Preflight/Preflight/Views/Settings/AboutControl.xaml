@@ -54,9 +54,7 @@
                 </Paragraph>
                 <Paragraph>
                     Uses
-                    <Hyperlink NavigateUri="http://code.google.com/p/protobuf-net/" TargetName="_blank">protobuf-net</Hyperlink>
-                    and
-                    <Hyperlink NavigateUri="http://imagetools.codeplex.com/" TargetName="_blank">ImageTools</Hyperlink>.
+                    <Hyperlink NavigateUri="http://code.google.com/p/protobuf-net/" TargetName="_blank">protobuf-net</Hyperlink>.
                 </Paragraph>
             </RichTextBox>
         </StackPanel>
